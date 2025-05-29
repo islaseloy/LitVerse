@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitVerse - Universo Literario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Orbitron:wght@400..900&family=Pinyon+Script&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-fiction">
+
+    <header>
+        <div class="logo">LitVerse</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">Sobre Nosotros</a>
+            <a href="#contact-section" id="contact-nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome-intro">
+            <h1>Un mundo entre palabras.</h1>
+            <p>Bienvenido a LitVerse, el cielo para los lectores. Explorá diversos genéros, conocé grandes autores, y dejá que la literatura te transporte más allá de tu imaginación. </p>
+        </section>
+
+        <section id="genre-selector">
+            <h2>Elije tu Reino</h2>
+            <div class="genres">
+                <button data-genre="fiction" class="genre-btn active-genre">Ficción</button>
+                <button data-genre="scifi" class="genre-btn">Ciencia Ficción</button>
+                <button data-genre="fantasy" class="genre-btn">Fantasía</button>
+                <button data-genre="romance" class="genre-btn">Romance</button>
+            </div>
+        </section>
+
+        <section id="author-gallery">
+            <h2>Conoce a los Autores</h2>
+            <div class="authors-grid">
+                <!-- Se cargan dinámicamente por el .js-->
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact-section">
+        <h2>Contactanos</h2>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+    </footer>
+
+    <div id="author-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div class="modal-body">
+                <div class="modal-author-profile">
+                    <div class="modal-author-image-container">
+                        <img id="modal-author-img" alt="Author Photo">
+                    </div>
+                    <div class="modal-author-details">
+                        <h2 id="modal-author-name">Nombre del Autor</h2>
+                        <div id="modal-author-bio">
+                            <!-- Acá se coloca la biografía dinámicamente por el .js -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-books-section">
+                    <h3>Obras más conocidas</h3>
+                    <div id="modal-books-grid" class="modal-books-grid">
+                        <!-- Las descripciones de los libros se cargan por el .js  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

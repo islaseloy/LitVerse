@@ -1,0 +1,363 @@
+:root {
+    --fiction-bg: #f5eadd;
+    --fiction-text: #4a3b31;
+    --fiction-header-bg: rgba(115, 93, 80, 0.7);
+    --fiction-accent: #8c6c58;
+    --fiction-button-bg: #d2b48c;
+    --fiction-button-text: #5d4037;
+
+    --scifi-bg: #0c0c1e;
+    --scifi-text: #a7d7f9;
+    --scifi-header-bg: rgba(20, 20, 40, 0.8);
+    --scifi-accent: #00e5ff;
+    --scifi-button-bg: #1a237e;
+    --scifi-button-text: #81d4fa;
+
+    --fantasy-bg: #2a2028;
+    --fantasy-text: #d8c8b8;
+    --fantasy-header-bg: rgba(50, 35, 45, 0.85);
+    --fantasy-accent: #b48040;
+    --fantasy-button-bg: #5a3e36;
+    --fantasy-button-text: #e0caaf;
+    --fantasy-heading-glow: #f1c40f;
+
+    --romance-bg: #fff0f5;
+    --romance-text: #6a4f4f;
+    --romance-header-bg: rgba(255, 228, 225, 0.85);
+    --romance-accent: #d49ea3;
+    --romance-heading-color: #b07373;
+    --romance-button-bg: #f8d7da;
+    --romance-button-text: #8c5353;
+    --romance-subtle-accent: #ffe4e9;
+
+    --about-bg: #fdfaf6;
+    --about-text: #3c3c3c;
+    --about-header-bg: rgba(230, 220, 210, 0.9);
+    --about-accent: #8a6d3b;
+}
+
+@keyframes floatMotes {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    20% { opacity: 0.3; }
+    80% { opacity: 0.2; }
+    100% { transform: translateY(-100vh) translateX(20vw); opacity: 0; }
+}
+
+@keyframes scrollStarfield {
+    from { background-position: 0 0; }
+    to { background-position: 0 1000px; }
+}
+
+@keyframes magicGlow {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    line-height: 1.7;
+    transition: background 0.8s ease-in-out, color 0.8s ease-in-out;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+}
+
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo { font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: bold; }
+nav a { margin-left: 25px; text-decoration: none; font-size: 1.1em; transition: color 0.3s, border-bottom-color 0.3s; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+nav a.active { font-weight: bold; }
+nav a:hover { opacity: 0.8; }
+main { padding: 0 50px 20px 50px; }
+.about-page-main { padding: 40px 50px; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; transition: color 0.5s, text-shadow 0.5s; margin-top: 0; }
+#welcome-intro h1 { font-size: 3.2em; text-align: center; margin-bottom: 0.5em; padding-top: 40px; }
+#welcome-intro p { text-align: center; font-size: 1.25em; max-width: 750px; margin: 0 auto 40px auto; }
+section { padding: 50px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+section:last-of-type, #author-gallery { border-bottom: none; }
+#genre-selector { text-align: center; }
+#genre-selector h2 { margin-bottom: 25px;}
+.genres { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+.genre-btn { padding: 12px 25px; font-family: 'Lora', serif; font-size: 1.05em; border: 2px solid; border-radius: 30px; cursor: pointer; transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s; font-weight: 500; }
+.genre-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+.genre-btn.active-genre { font-weight: bold; transform: scale(1.05); }
+#author-gallery h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; }
+.authors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; }
+.author-card { border-radius: 10px; padding: 25px; text-align: center; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.08); overflow: hidden; }
+.author-card:hover { transform: translateY(-8px) scale(1.04); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.author-card-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 18px; border: 4px solid; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.author-card h3 { margin: 0; font-size: 1.3em; }
+.no-authors { grid-column: 1 / -1; text-align: center; padding: 40px 20px; font-style: italic; font-size: 1.1em; opacity: 0.7; color: inherit; }
+#contact-section { padding: 60px 50px; margin-top: 30px; border-top: 1px solid rgba(0,0,0,0.08); }
+#contact-section h2 { text-align: center; margin-bottom: 35px; font-size: 2.5em; }
+#contact-form { max-width: 650px; margin: 0 auto; }
+.form-group { margin-bottom: 22px; }
+.form-group label { display: block; margin-bottom: 7px; font-weight: bold; font-size: 0.95em; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-family: 'Lora', serif; box-sizing: border-box; font-size: 1em; }
+.submit-btn { display: block; width: auto; margin: 10px auto 0 auto; padding: 14px 30px; font-family: 'Playfair Display', serif; font-size: 1.15em; border: none; border-radius: 30px; cursor: pointer; transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s; }
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.75); opacity: 0; transition: opacity 0.4s ease-in-out; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+.modal.show { display: flex; opacity: 1; }
+.modal-content { background-color: #fefefe; margin: auto; padding: 35px 45px; border: 1px solid #ddd; width: 90%; max-width: 900px; max-height: 90vh; overflow-y: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); position: relative; transform: scale(0.95) translateY(15px); transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s, background-color 0.5s, border-color 0.5s, color 0.5s; }
+.modal.show .modal-content { transform: scale(1) translateY(0); }
+.close-btn { color: #777; position: absolute; top: 18px; right: 25px; font-size: 32px; font-weight: bold; line-height: 1; transition: color 0.2s, transform 0.2s; }
+.close-btn:hover, .close-btn:focus { color: #333; text-decoration: none; cursor: pointer; transform: scale(1.1); }
+.modal-body { display: flex; flex-direction: column; }
+.modal-author-profile { display: flex; flex-direction: row; gap: 35px; align-items: flex-start; margin-bottom: 35px; width: 100%; }
+.modal-author-image-container { flex-shrink: 0; }
+#modal-author-img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; border: 7px solid; box-shadow: 0 6px 20px rgba(0,0,0,0.22); transition: border-color 0.5s; }
+.modal-author-details { flex-grow: 1; text-align: left; padding-top: 10px; }
+#modal-author-name { font-size: 2.8em; margin-bottom: 18px; line-height: 1.2; position: relative; padding-bottom: 12px; color: #333; transition: color 0.5s, text-shadow 0.5s; }
+#modal-author-name::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 3px; background-color: #ccc; border-radius: 2px; transition: background-color 0.5s; }
+#modal-author-bio { font-size: 1.05em; text-align: justify; margin-bottom: 0; width: 100%; color: #555; line-height: 1.75; transition: color 0.5s; }
+#modal-author-bio p { margin-bottom: 15px; }
+#modal-author-bio p:last-child { margin-bottom: 0; }
+.modal-books-section { width: 100%; margin-top: 25px; padding-top: 25px; border-top: 1px solid #e8e8e8; transition: border-top-color 0.5s; }
+.modal-books-section h3 { text-align: center; font-size: 2em; margin-bottom: 30px; color: #333; transition: color 0.5s, text-shadow 0.5s; }
+.modal-books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; width: 100%; }
+.book-card-flip { background-color: transparent; width: 100%; aspect-ratio: 2 / 3; border-radius: 8px; perspective: 1000px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transition: box-shadow 0.3s; }
+.book-card-flip:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+.book-card-flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1); transform-style: preserve-3d; border-radius: 8px; }
+.book-card-flip.is-flipped .book-card-flip-inner { transform: rotateY(180deg); }
+.book-card-front, .book-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.book-card-front img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+.book-card-back { transform: rotateY(180deg); padding: 18px; box-sizing: border-box; font-size: 0.9em; overflow-y: auto; transition: background-color 0.5s, color 0.5s; }
+.book-card-back h4 { font-family: 'Playfair Display', serif; font-size: 1.15em; margin: 0 0 10px 0; transition: color 0.5s;}
+.book-card-back p { font-size: 0.88em; line-height: 1.55; text-align: left; margin: 0; transition: color 0.5s;}
+.book-card-back .book-year { font-size: 0.8em; color: #777; margin-top: 10px; display: block; text-align: left; transition: color 0.5s;}
+
+.theme-fiction { background: var(--fiction-bg) url('https://www.transparenttextures.com/patterns/wood-pattern.png') repeat; color: var(--fiction-text); }
+.theme-fiction header { background-color: var(--fiction-header-bg); }
+.theme-fiction .logo, .theme-fiction nav a { color: var(--fiction-text); }
+.theme-fiction h1, .theme-fiction h2, .theme-fiction h3 { color: var(--fiction-text); }
+.theme-fiction nav a:hover { color: #c8b099; }
+.theme-fiction nav a.active { border-bottom-color: var(--fiction-accent); }
+.theme-fiction .genre-btn { background-color: transparent; color: var(--fiction-button-text); border-color: var(--fiction-button-bg); }
+.theme-fiction .genre-btn:hover { background-color: var(--fiction-button-bg); color: var(--fiction-bg); }
+.theme-fiction .genre-btn.active-genre { background-color: var(--fiction-accent); color: var(--fiction-bg); border-color: var(--fiction-accent); }
+.theme-fiction .author-card { background-color: #e8d9c5; color: var(--fiction-text); }
+.theme-fiction .author-card-img { border-color: var(--fiction-accent); }
+.theme-fiction .submit-btn { background-color: var(--fiction-button-text); color: var(--fiction-bg); }
+.theme-fiction footer#contact-section { background-color: #c8b099; }
+.theme-fiction .modal-content { background-color: #f8f0e3; border-color: var(--fiction-accent); color: var(--fiction-text); }
+.theme-fiction #modal-author-img { border-color: var(--fiction-accent); }
+.theme-fiction #modal-author-name { color: var(--fiction-text); }
+.theme-fiction #modal-author-name::after { background-color: var(--fiction-accent); }
+.theme-fiction #modal-author-bio { color: #5a4a3e; }
+.theme-fiction .modal-books-section { border-top-color: rgba(var(--fiction-accent), 0.5); }
+.theme-fiction .modal-books-section h3 { color: var(--fiction-text); }
+.theme-fiction .book-card-back { background-color: #e8d9c5; color: var(--fiction-button-text); }
+.theme-fiction .book-card-back h4, .theme-fiction .book-card-back p, .theme-fiction .book-card-back .book-year { color: var(--fiction-button-text); }
+.theme-fiction::before {
+    background: linear-gradient( 45deg, rgba(240, 220, 180, 0.0) 0%, rgba(240, 220, 180, 0.1) 30%, rgba(240, 220, 180, 0.1) 70%, rgba(240, 220, 180, 0.0) 100% );
+    opacity: 0.7;
+    mix-blend-mode: overlay;
+    transform: skewX(-20deg) translateX(-30%);
+    z-index: -2;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+}
+.theme-fiction::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    z-index: -1;
+    box-shadow:
+        5vw -10vh 2px rgba(var(--fiction-text), 0.2),
+        20vw -30vh 1px rgba(var(--fiction-accent), 0.3),
+        35vw -5vh 3px rgba(var(--fiction-text), 0.25),
+        50vw -60vh 2px rgba(var(--fiction-accent), 0.35),
+        70vw -20vh 1px rgba(var(--fiction-text), 0.15),
+        85vw -45vh 3px rgba(var(--fiction-accent), 0.25),
+        15vw -80vh 2px rgba(var(--fiction-text), 0.2),
+        60vw -70vh 1px rgba(var(--fiction-accent), 0.3);
+    animation: floatMotes 35s linear infinite;
+    animation-delay: -2s;
+    opacity: 0;
+}
+
+.theme-scifi { background-color: var(--scifi-bg); color: var(--scifi-text); font-family: 'Orbitron', sans-serif; }
+.theme-scifi header { background-color: var(--scifi-header-bg); }
+.theme-scifi .logo, .theme-scifi nav a { color: var(--scifi-accent); text-shadow: 0 0 3px var(--scifi-accent), 0 0 6px var(--scifi-accent); font-family: 'Orbitron', sans-serif; }
+.theme-scifi h1, .theme-scifi h2, .theme-scifi h3 { color: var(--scifi-accent); text-shadow: 0 0 3px var(--scifi-accent), 0 0 6px var(--scifi-accent); font-family: 'Orbitron', sans-serif;}
+.theme-scifi nav a:hover { color: #fff; }
+.theme-scifi nav a.active { border-bottom-color: var(--scifi-accent); }
+.theme-scifi .genre-btn { background-color: transparent; color: var(--scifi-button-text); border-color: var(--scifi-button-bg); font-family: 'Orbitron', sans-serif; text-shadow: none; }
+.theme-scifi .genre-btn:hover { background-color: var(--scifi-button-bg); color: var(--scifi-accent); }
+.theme-scifi .genre-btn.active-genre { background-color: var(--scifi-accent); color: var(--scifi-bg); box-shadow: 0 0 15px var(--scifi-accent); border-color: var(--scifi-accent); }
+.theme-scifi .author-card { background-color: rgba(30, 40, 90, 0.75); border: 1px solid var(--scifi-accent); box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); color: var(--scifi-text); }
+.theme-scifi .author-card h3 { font-family: 'Orbitron', sans-serif; color: var(--scifi-text); text-shadow: none; }
+.theme-scifi .author-card-img { border-color: var(--scifi-accent); }
+.theme-scifi .submit-btn { background-color: var(--scifi-accent); color: var(--scifi-bg); font-family: 'Orbitron', sans-serif; text-shadow: none; }
+.theme-scifi footer#contact-section { background-color: #101028; }
+.theme-scifi .modal-content { background-color: #101830; border-color: var(--scifi-accent); color: var(--scifi-text); }
+.theme-scifi #modal-author-img { border-color: var(--scifi-accent); }
+.theme-scifi #modal-author-name { color: var(--scifi-accent); text-shadow: 0 0 4px var(--scifi-accent); font-family: 'Orbitron', sans-serif;}
+.theme-scifi #modal-author-name::after { background-color: var(--scifi-accent); }
+.theme-scifi #modal-author-bio { color: var(--scifi-text); opacity: 0.9; font-family: 'Lora', serif; }
+.theme-scifi .modal-books-section { border-top-color: rgba(var(--scifi-accent), 0.5); }
+.theme-scifi .modal-books-section h3 { color: var(--scifi-accent); text-shadow: 0 0 4px var(--scifi-accent); font-family: 'Orbitron', sans-serif;}
+.theme-scifi .book-card-back { background-color: #0a0f23; color: var(--scifi-text); }
+.theme-scifi .book-card-back h4 { color: var(--scifi-text); font-family: 'Orbitron', sans-serif; }
+.theme-scifi .book-card-back p, .theme-scifi .book-card-back .book-year { color: var(--scifi-text); font-family: 'Lora', serif;}
+.theme-scifi::before {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-repeat: repeat; animation: scrollStarfield 60s linear infinite; opacity: 0.3; z-index: -2;
+}
+
+.theme-fantasy { background-color: var(--fantasy-bg); color: var(--fantasy-text); font-family: 'Cinzel', serif; }
+.theme-fantasy header { background-color: var(--fantasy-header-bg); }
+.theme-fantasy .logo, .theme-fantasy nav a { color: var(--fantasy-text); text-shadow: 0 1px 2px rgba(0,0,0,0.3); font-family: 'Cinzel', serif; }
+.theme-fantasy h1, .theme-fantasy h2, .theme-fantasy h3 { color: var(--fantasy-accent); text-shadow: 0 0 5px var(--fantasy-heading-glow), 0 0 10px rgba(54, 45, 6, 0.5); font-family: 'Cinzel', serif; }
+.theme-fantasy nav a:hover { color: var(--fantasy-accent); }
+.theme-fantasy nav a.active { border-bottom-color: var(--fantasy-accent); }
+.theme-fantasy .genre-btn { background-color: transparent; color: var(--fantasy-button-text); border-color: var(--fantasy-button-bg); font-family: 'Cinzel', serif; text-shadow: none; }
+.theme-fantasy .genre-btn:hover { background-color: var(--fantasy-button-bg); color: var(--fantasy-accent); }
+.theme-fantasy .genre-btn.active-genre { background-color: var(--fantasy-accent); color: var(--fantasy-bg); border-color: var(--fantasy-accent); }
+.theme-fantasy .author-card { background-color: rgba(60, 45, 55, 0.8); border: 1px solid var(--fantasy-accent); color: var(--fantasy-text); }
+.theme-fantasy .author-card h3 { font-family: 'Cinzel', serif; color: var(--fantasy-text); text-shadow: none; }
+.theme-fantasy .author-card-img { border-color: var(--fantasy-accent); }
+.theme-fantasy .submit-btn { background-color: var(--fantasy-accent); color: var(--fantasy-bg); font-family: 'Cinzel', serif; text-shadow: none; }
+.theme-fantasy footer#contact-section { background-color: #4a3a40; }
+.theme-fantasy .modal-content { background-color: #3c2f36; border-color: var(--fantasy-accent); color: var(--fantasy-text); }
+.theme-fantasy #modal-author-img { border-color: var(--fantasy-accent); }
+.theme-fantasy #modal-author-name { color: var(--fantasy-accent); text-shadow: 0 0 5px var(--fantasy-heading-glow); font-family: 'Cinzel', serif;}
+.theme-fantasy #modal-author-name::after { background-color: var(--fantasy-accent); }
+.theme-fantasy #modal-author-bio { color: var(--fantasy-text); opacity: 0.9; font-family: 'Lora', serif; }
+.theme-fantasy .modal-books-section { border-top-color: rgba(var(--fantasy-accent), 0.5); }
+.theme-fantasy .modal-books-section h3 { color: var(--fantasy-accent); text-shadow: 0 0 5px var(--fantasy-heading-glow); font-family: 'Cinzel', serif;}
+.theme-fantasy .book-card-back { background-color: #4a3a40; color: var(--fantasy-text); }
+.theme-fantasy .book-card-back h4 { color: var(--fantasy-text); font-family: 'Cinzel', serif; }
+.theme-fantasy .book-card-back p, .theme-fantasy .book-card-back .book-year { color: var(--fantasy-text); font-family: 'Lora', serif;}
+.theme-fantasy::before {
+    background: radial-gradient(circle at 20% 30%, rgba(241,196,15, 0.10) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(180,128,64, 0.08) 0%, transparent 35%), radial-gradient(circle at 50% 50%, rgba(120,80,150,0.06) 0%, transparent 50%);
+    animation: magicGlow 2s ease-in-out infinite alternate; opacity: 0.7; mix-blend-mode: screen; z-index: -2;
+}
+.theme-fantasy::after {
+    width: 0; height: 0;
+    box-shadow: 5vw 10vh 5px 1px rgba(220, 255, 180, 0.7), 25vw 60vh 6px 2px rgba(200, 255, 170, 0.6), 60vw 30vh 4px 1px rgba(220, 255, 180, 0.8), 85vw 75vh 5px 2px rgba(200, 255, 170, 0.7), 40vw 85vh 6px 1px rgba(220, 255, 180, 0.65);
+    animation: magicGlow 3s ease-in-out infinite alternate; opacity: 1; z-index: -1;
+}
+
+.theme-romance { background: var(--romance-bg) url('https://www.transparenttextures.com/patterns/az-subtle.png') repeat; color: var(--romance-text); }
+.theme-romance p, .theme-romance .genre-btn, .theme-romance nav a, .theme-romance .form-group label, .theme-romance .author-card h3, .theme-romance #modal-author-bio { font-family: 'Lora', serif; color: var(--romance-text); }
+.theme-romance header { background-color: var(--romance-header-bg); }
+.theme-romance .logo { font-family: 'Pinyon Script', cursive; color: var(--romance-heading-color); font-size: 2.4em; }
+.theme-romance nav a { color: var(--romance-text); opacity: 0.85; }
+.theme-romance nav a:hover { color: var(--romance-heading-color); opacity: 1; }
+.theme-romance nav a.active { border-bottom-color: var(--romance-accent); color: var(--romance-heading-color); opacity: 1; }
+.theme-romance h1, .theme-romance #welcome-intro h1, .theme-romance #genre-selector h2, .theme-romance #author-gallery h2, .theme-romance #contact-section h2 { font-family: 'Pinyon Script', cursive; color: var(--romance-heading-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+.theme-romance #welcome-intro h1 { font-size: 3.8em; }
+.theme-romance #genre-selector h2, .theme-romance #author-gallery h2, .theme-romance #contact-section h2 { font-size: 2.6em; }
+.theme-romance .author-card h3 { font-style: italic; }
+.theme-romance .genre-btn { background-color: transparent; color: var(--romance-button-text); border-color: var(--romance-button-bg); text-shadow: none; }
+.theme-romance .genre-btn:hover { background-color: var(--romance-button-bg); color: #fff; }
+.theme-romance .genre-btn.active-genre { background-color: var(--romance-accent); color: #fff; border-color: var(--romance-accent); }
+.theme-romance .author-card { background-color: #fff7f9; border: 1px solid var(--romance-accent); }
+.theme-romance .author-card-img { border-color: var(--romance-accent); }
+.theme-romance .submit-btn { background-color: var(--romance-accent); color: #fff; font-family: 'Playfair Display', serif; text-shadow: none; }
+.theme-romance footer#contact-section { background-color: #fae3e6; }
+.theme-romance .modal-content { background-color: #fffafb; border-color: var(--romance-accent); color: var(--romance-text); }
+.theme-romance #modal-author-img { border-color: var(--romance-accent); }
+.theme-romance #modal-author-name { font-family: 'Pinyon Script', cursive; color: var(--romance-heading-color); font-size: 2.8em; text-shadow: 1px 1px 2px rgba(0,0,0,0.08); }
+.theme-romance #modal-author-name::after { background-color: var(--romance-accent); }
+.theme-romance #modal-author-bio { font-family: 'Lora', serif; opacity: 0.95; }
+.theme-romance .modal-books-section { border-top-color: rgba(var(--romance-accent), 0.5); }
+.theme-romance .modal-books-section h3 { font-family: 'Pinyon Script', cursive; color: var(--romance-heading-color); font-size: 2.0em; text-shadow: 1px 1px 2px rgba(0,0,0,0.08); }
+.theme-romance .book-card-back { background-color: var(--romance-subtle-accent); color: var(--romance-text); }
+.theme-romance .book-card-back h4 { font-family: 'Pinyon Script', cursive; color: var(--romance-heading-color); font-size: 1.5em; }
+.theme-romance .book-card-back p, .theme-romance .book-card-back .book-year { color: var(--romance-text); font-family: 'Lora', serif;}
+
+.theme-about { background-color: var(--about-bg); color: var(--about-text); font-family: 'Lora', serif; }
+.theme-about header { background-color: var(--about-header-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.theme-about .logo { color: #5a4a3a; font-family: 'Playfair Display', serif; }
+.theme-about nav a { color: #5a4a3a; font-family: 'Lora', serif; }
+.theme-about nav a:hover { color: var(--about-accent); }
+.theme-about nav a.active { border-bottom-color: var(--about-accent); color: var(--about-accent); }
+#about-us-content { max-width: 900px; margin: 40px auto; padding: 30px; background-color: #fff; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+#about-us-content h1 { text-align: center; color: var(--about-accent); font-size: 2.8em; margin-bottom: 30px; font-family: 'Playfair Display', serif; }
+.about-text-container p { font-size: 1.15em; line-height: 1.8; margin-bottom: 20px; text-align: justify; color: #4f4f4f; font-family: 'Lora', serif; }
+.about-page-image { text-align: center; margin-top: 40px; }
+.about-page-image img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.about-page-footer { text-align: center; padding: 20px; margin-top: 40px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
+
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 15px 20px; }
+    nav { margin-top: 10px; }
+    nav a { margin: 0 10px; font-size: 1em; }
+    main, .about-page-main { padding: 15px 20px; }
+    #welcome-intro h1 { font-size: 2.5em; }
+    .genres { flex-direction: column; gap: 10px; }
+    .genre-btn { width: 80%; margin: 5px auto;}
+    .authors-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+    .author-card-img { width: 100px; height: 100px; }
+
+    .modal-content { width: 95%; padding: 25px 30px; max-height: 85vh; }
+    .modal-author-profile { flex-direction: column; align-items: center; gap: 25px; }
+    #modal-author-img { width: 180px; height: 180px; }
+    .modal-author-details { text-align: center; padding-top: 0;}
+    #modal-author-name { font-size: 2.4em; text-align: center; }
+    #modal-author-name::after { left: 50%; transform: translateX(-50%); }
+    #modal-author-bio { text-align: justify; font-size: 1em; }
+    .modal-books-section h3 { font-size: 1.7em; }
+
+    .theme-romance .logo { font-size: 2.4em; }
+    .theme-romance #welcome-intro h1 { font-size: 3em;}
+    .theme-romance #genre-selector h2, .theme-romance #author-gallery h2, .theme-romance #contact-section h2 { font-size: 2.6em; }
+    .theme-romance #modal-author-name { font-size: 2.8em; }
+    .theme-romance .modal-books-section h3 {font-size: 2.2em;}
+
+    #about-us-content {padding: 20px;}
+    #about-us-content h1 { font-size: 2.2em; }
+    .about-text-container p {font-size: 1em;}
+}
+
+@media (max-width: 480px) {
+    .logo {font-size: 1.8em;}
+    nav a { font-size: 0.9em; }
+    #welcome-intro h1 { font-size: 2em; }
+    .author-card { padding: 15px; }
+    .author-card-img { width: 80px; height: 80px; }
+
+    .modal-content { padding: 20px; }
+    #modal-author-img { width: 140px; height: 140px; border-width: 5px; }
+    #modal-author-name { font-size: 2em; }
+    #modal-author-name::after { width: 60px; height: 2.5px; }
+    #modal-author-bio { font-size: 0.95em; }
+    .modal-books-section h3 {font-size: 1.5em;}
+    .modal-books-grid { grid-template-columns: 1fr 1fr; gap: 20px;}
+    .book-card-back h4 {font-size: 1em;}
+    .book-card-back p {font-size: 0.8em;}
+
+    .theme-romance .logo { font-size: 2em; }
+    .theme-romance #welcome-intro h1 { font-size: 2.6em;}
+    .theme-romance #genre-selector h2, .theme-romance #author-gallery h2, .theme-romance #contact-section h2 { font-size: 2.2em; }
+    .theme-romance #modal-author-name { font-size: 2.4em; }
+    .theme-romance .modal-books-section h3 {font-size: 1.8em;}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About LitVerse - Our Mission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Orbitron:wght@400..900&family=Pinyon+Script&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-about">
+
+    <header>
+        <div class="logo">LitVerse</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">Sobre Nosotros</a>
+            <a href="index.html#contact-section">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="about-page-main">
+        <section id="about-us-content">
+            <h1>Nuestra Misión</h1>
+            <div class="about-text-container">
+               <p>LitVerse nace de una profunda pasión por el poder transformador de la narración. Creemos firmemente que la literatura abre puertas luminosas a una infinidad de mundos, ofreciendo consuelo frente a lo cotidiano, despertando una emoción vibrante y cultivando una comprensión más profunda de nosotros mismos y del universo que nos rodea.</p> 
+               <p>Nuestra misión principal es celebrar a los autores y sus creaciones invaluables, invitando a los lectores a sumergirse en entornos literarios meticulosamente construidos e inmersivos. Buscamos fomentar una comunidad vibrante y acogedora, donde las historias no solo se lean, sino que se atesoren, y donde la alegría del descubrimiento sea una aventura infinita y en constante desarrollo.</p>
+                <p>Acompañanos en este viaje a través de los ilimitados reinos de la ficción cautivadora, explorá los paisajes futuristas y asombrosos de la ciencia ficción, recorré los bosques encantados y místicos de la fantasía, y viví los viajes profundamente emotivos y conmovedores del romance. En LitVerse, cada página que se pasa es un nuevo horizonte.</p>
+            </div>
+             <div class="about-page-image">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeSUyMGFlc3RoZXRpY3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="A beautiful, inviting library">
+            </div>
+        </section>
+    </main>
+
+    <footer class="about-page-footer">
+        <p>© <span id="current-year"></span> LitVerse. Esta web me pertenece.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

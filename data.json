@@ -1,0 +1,239 @@
+[
+  {
+    "id": 1,
+    "name": "Jane Austen",
+    "genre": "fiction",
+    "photo": "pictures/jane_austen.avif",
+    "bio": "Jane Austen (1775-1817) fue una novelista inglesa conocida principalmente por sus seis novelas principales, que interpretan, critican y comentan sobre la aristocracia terrateniente británica a finales del siglo XVIII. Las tramas de Austen a menudo exploran la dependencia de las mujeres del matrimonio en la búsqueda de una posición social favorable y seguridad económica.",
+    "books": [
+      {
+        "title": "Orgullo y prejuicio",
+        "year": 1813,
+        "coverImage": "https://covers.openlibrary.org/b/id/13775960-L.jpg",
+        "description": "Una ingeniosa novela de costumbres, centrada en la familia Bennet y la historia de amor entre Elizabeth Bennet y el Sr. Darcy."
+      },
+      {
+        "title": "Sensatez y sensibilidad",
+        "year": 1811,
+        "coverImage": "https://covers.openlibrary.org/b/id/14534695-L.jpg",
+        "description": "Sigue a las hermanas Dashwood mientras enfrentan el amor, el desamor y las expectativas sociales."
+      },
+      {
+        "title": "Emma",
+        "year": 1815,
+        "coverImage": "https://covers.openlibrary.org/b/id/14617362-L.jpg",
+        "description": "Una heroína vivaz y entrometida navega por los entresijos del emparejamiento y los prejuicios en Highbury."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Isaac Asimov",
+    "genre": "scifi",
+    "photo": "pictures/Asimov.jpg",
+    "bio": "Isaac Asimov (c. 1920-1992) fue un escritor y profesor de bioquímica estadounidense en la Universidad de Boston. Fue conocido por sus obras de ciencia ficción y divulgación científica. Asimov fue un escritor prolífico y escribió o editó más de 500 libros.",
+    "books": [
+      {
+        "title": "Fundación",
+        "year": 1951,
+        "coverImage": "https://covers.openlibrary.org/b/id/12991847-L.jpg",
+        "description": "La saga épica de la decadencia de un Imperio Galáctico y el establecimiento de un nuevo orden a través de la psicohistoria."
+      },
+      {
+        "title": "Yo, robot",
+        "year": 1950,
+        "coverImage": "https://covers.openlibrary.org/b/id/14950510-L.jpg",
+        "description": "Una colección de cuentos entrelazados por las Tres Leyes de la Robótica, que exploran las interacciones entre humanos y robots."
+      },
+      {
+        "title": "Las bóvedas de acero",
+        "year": 1954,
+        "coverImage": "https://covers.openlibrary.org/b/id/11848404-L.jpg",
+        "description": "El detective Elijah Baley y el robot R. Daneel Olivaw resuelven un asesinato en una futurista ciudad terrestre cerrada."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "J.R.R. Tolkien",
+    "genre": "fantasy",
+    "photo": "pictures/Tolkien.jpg",
+    "bio": "John Ronald Reuel Tolkien (1892-1973) fue un escritor, poeta, filólogo y académico inglés, mejor conocido como el autor de las obras de alta fantasía El Hobbit y El Señor de los Anillos.",
+    "books": [
+      {
+        "title": "El Hobbit",
+        "year": 1937,
+        "coverImage": "pictures/elhobbit.jpg",
+        "description": "El viaje inesperado de Bilbo Bolsón con enanos para reclamar un tesoro del dragón Smaug."
+      },
+      {
+        "title": "El Señor de los Anillos",
+        "year": 1954,
+        "coverImage" : "pictures/lotr.jpg",
+        "description": "Una búsqueda épica para destruir el Anillo Único y derrotar al Señor Oscuro Sauron en la Tierra Media."
+      },
+      {
+        "title": "El Silmarillion",
+        "year": 1977,
+        "coverImage": "pictures/silmarilion.jpg",
+        "description": "Una colección de relatos mitopéyicos que forman la historia antigua de la Tierra Media antes de El Hobbit."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nora Roberts",
+    "genre": "romance",
+    "photo": "pictures/nora.jpg",
+    "bio": "Nora Roberts (nacida Eleanor Marie Robertson el 10 de octubre de 1950) es una autora estadounidense de más de 225 novelas románticas. Escribe como J. D. Robb para la serie In Death.",
+    "books": [
+      {
+        "title": "Visión en blanco",
+        "year": 2009,
+        "coverImage": "https://covers.openlibrary.org/b/id/11346427-L.jpg",
+        "description": "Primera entrega de la serie Bride Quartet, centrada en las vidas y amores de cuatro amigas que dirigen una empresa de planificación de bodas."
+      },
+      {
+        "title": "Desnuda en la muerte",
+        "year": 1995,
+        "coverImage": "https://openlibrary.org/books/OL9401185M/Naked_in_Death",
+        "description": "El debut de la detective de homicidios futurista Eve Dallas, escrita bajo el seudónimo de J.D. Robb."
+      },
+      {
+        "title": "Siempre hay un mañana",
+        "year": 2011,
+        "coverImage": "https://covers.openlibrary.org/b/id/12335351-L.jpg",
+        "description": "Primer libro de la Trilogía Inn BoonsBoro, donde hermanos restauran una posada histórica y encuentran el amor."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "George Orwell",
+    "genre": "fiction",
+    "photo": "pictures/Orwell.jpg",
+    "bio": "Eric Arthur Blair (1903-1950), conocido por su seudónimo George Orwell, fue un novelista, ensayista, periodista y crítico inglés. Su trabajo se caracteriza por una prosa lúcida, crítica social, oposición al totalitarismo y apoyo al socialismo democrático.",
+    "books": [
+      {
+        "title": "1984",
+        "year": 1949,
+        "coverImage": "https://covers.openlibrary.org/b/id/15064697-L.jpg",
+        "description": "Una inquietante novela distópica que representa un estado totalitario donde 'Gran Hermano' siempre está vigilando."
+      },
+      {
+        "title": "Rebelión en la granja",
+        "year": 1945,
+        "coverImage": "https://covers.openlibrary.org/b/id/14853609-L.jpg",
+        "description": "Una novela alegórica en la que los animales de una granja derrocan a los humanos, solo para establecer su propio régimen opresivo."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Ursula K. Le Guin",
+    "genre": "scifi",
+    "photo": "pictures/LeGuin.jpg",
+    "bio": "Ursula Kroeber Le Guin (1929-2018) fue una autora estadounidense conocida por sus obras de ficción especulativa, incluyendo obras de ciencia ficción ambientadas en su universo Hainish, y la serie de fantasía Earthsea. Sus escritos a menudo exploraban temas taoístas, anarquistas, etnográficos, feministas, psicológicos y sociológicos.",
+    "books": [
+      {
+        "title": "La mano izquierda de la oscuridad",
+        "year": 1969,
+        "coverImage": "https://covers.openlibrary.org/b/id/6989406-L.jpg",
+        "description": "Una novela innovadora que explora temas de género y sexualidad en el planeta alienígena Gethen, cuyos habitantes son ambisexuales."
+      },
+      {
+        "title": "Un mago de Terramar",
+        "year": 1968,
+        "coverImage": "https://covers.openlibrary.org/b/id/14322310-L.jpg",
+        "description": "La historia de crecimiento de Ged, un joven mago en el archipiélago de Terramar, lidiando con el poder y sus consecuencias."
+      },
+      {
+        "title": "Los desposeídos",
+        "year": 1974,
+        "coverImage": "https://covers.openlibrary.org/b/id/26459-L.jpg",
+        "description": "Una novela utópica anarquista que contrasta dos planetas con sistemas sociopolíticos muy diferentes, Anarres y Urras."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Neil Gaiman",
+    "genre": "fantasy",
+    "photo": "pictures/Gaiman.jpg",
+    "bio": "Neil Richard MacKinnon Gaiman (nacido en 1960) es un autor inglés de relatos cortos, novelas, cómics, novelas gráficas, no ficción, teatro auditivo y películas. Sus obras incluyen la serie de cómics The Sandman y las novelas Stardust, American Gods, Coraline y The Graveyard Book.",
+    "books": [
+      {
+        "title": "Dioses americanos",
+        "year": 2001,
+        "coverImage": "https://covers.openlibrary.org/b/id/8443615-L.jpg",
+        "description": "Dioses antiguos y nuevos chocan en la América moderna mientras el exconvicto Shadow Moon es arrastrado a su conflicto."
+      },
+      {
+        "title": "Stardust",
+        "year": 1999,
+        "coverImage": "https://covers.openlibrary.org/b/id/11222467-L.jpg",
+        "description": "Un joven se aventura en el reino mágico de Faerie para recuperar una estrella caída para su amada."
+      },
+      {
+        "title": "Coraline",
+        "year": 2002,
+        "coverImage": "https://covers.openlibrary.org/b/id/14575479-L.jpg",
+        "description": "Una niña descubre una puerta secreta que conduce a una versión alternativa y siniestra de su propia vida."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Julia Quinn",
+    "genre": "romance",
+    "photo": "pictures/Quinn.jpg",
+    "bio": "Julie Pottinger (nacida en 1970), mejor conocida por su seudónimo Julia Quinn, es una autora estadounidense de ficción romántica histórica. Sus novelas han sido traducidas a 29 idiomas y ha aparecido 19 veces en la lista de bestsellers del New York Times.",
+    "books": [
+      {
+        "title": "El duque y yo",
+        "year": 2000,
+        "coverImage": "pictures/duqueyo.jpg",
+        "description": "Primera entrega de la serie Bridgerton: Daphne Bridgerton y el Duque de Hastings inician un falso noviazgo que se vuelve real."
+      },
+      {
+        "title": "Bridgerton: El vizconde que me amó",
+        "year": 2000,
+        "coverImage": "https://covers.openlibrary.org/b/id/10942054-L.jpg",
+        "description": "La segunda novela de Bridgerton, que sigue el tumultuoso camino hacia el amor de Anthony Bridgerton con Kate Sheffield."
+      },
+      {
+        "title": "Seduciendo a Mr. Bridgerton",
+        "year": 2002,
+        "coverImage": "https://covers.openlibrary.org/b/id/10877961-L.jpg",
+        "description": "El secreto largamente guardado de Penelope Featherington y su amor por Colin Bridgerton salen a la luz."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Alexandre Dumas",
+    "genre": "fiction",
+    "photo": "pictures/dumas.webp",
+    "bio": "Alexandre Dumas (1802–1870) fue un novelista y dramaturgo francés, célebre por sus novelas históricas de aventuras. Entre sus obras más famosas se encuentran *os tres mosqueteros y El conde de Montecristo. Su narrativa combina personajes reales y eventos históricos con tramas ficticias llenas de drama y acción.",
+    "books": [
+      {
+        "title": "Los tres mosqueteros",
+        "year": 1844,
+        "coverImage": "https://covers.openlibrary.org/b/id/12622205-L.jpg",
+        "description": "La historia de D’Artagnan, un joven gascón que se une a los mosqueteros del rey y vive aventuras junto a Athos, Porthos y Aramis en la Francia del siglo XVII."
+      },
+      {
+        "title": "El conde de Montecristo",
+        "year": 1844,
+        "coverImage": "https://covers.openlibrary.org/b/id/14563846-L.jpg",
+        "description": "Edmond Dantès es traicionado y encarcelado injustamente. Tras escapar, se convierte en el misterioso Conde de Montecristo para vengarse de quienes lo traicionaron."
+      },
+      {
+        "title": "La reina Margot",
+        "year": 1845,
+        "coverImage": "https://covers.openlibrary.org/b/id/14564984-L.jpg",
+        "description": "Ambientada en la corte francesa del siglo XVI, esta novela sigue a Margarita de Valois durante los conflictos religiosos entre católicos y hugonotes."
+      }
+    ]
+  }
+]

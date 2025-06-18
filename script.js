@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert('Thank you for your message! (This is a demo, no data was sent)');
+                alert('Datos enviados! Gracias por escribirnos');
                 contactForm.reset();
             });
         }

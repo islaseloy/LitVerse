@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Finalizar Compra - LitVerse</title>
+</head>
+<body class="theme-dark">
+
+
+    <main>
+        <section id="checkout-section">
+            <div class="checkout-container">
+
+                <div class="book-showcase">
+                    <img id="book-cover" src="" alt="Portada del libro">
+                    <h2 id="book-title"></h2>
+                    <p id="book-author"></p>
+                    <span id="book-price" class="price-tag">$50000</span>
+                </div>
+
+                <div class="payment-form">
+                    <h1>Completa tu Compra</h1>
+                    <form id="purchase-form">
+                        <div class="form-group">
+                            <label for="name">Nombre en la Tarjeta</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Número de Tarjeta</label>
+                            <input type="text" id="card-number" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Vencimiento</label>
+                                <input type="text" id="expiry" placeholder="MM/AA" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Pagar ahora</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="success-overlay" class="hidden">
+        <div class="success-box">
+            <div class="checkmark">✔</div>
+            <h2>¡Gracias por tu compra!</h2>
+            <p>Tu viaje literario está por comenzar.</p>
+            <a href="index.html" class="back-home-btn">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
+

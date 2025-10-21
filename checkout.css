@@ -1,0 +1,224 @@
+:root {
+    --dark-bg: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #D4AF37;
+    --input-bg: #2b2b2b;
+    --border-color: #444;
+}
+
+body.theme-dark {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 50px;
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+
+.book-showcase {
+    flex-basis: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-showcase img {
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+}
+
+#book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em; 
+    color: var(--accent-color);
+    line-height: 1.2;
+    margin-bottom: 5px; 
+}
+
+#book-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3em;
+    font-style: italic; 
+    color: #b0b0b0;
+    margin-top: 0;
+    margin-bottom: 25px; 
+}
+
+.price-tag {
+    font-family: 'Lato', sans-serif; 
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+
+.payment-form {
+    flex-basis: 45%;
+}
+
+.payment-form h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #ccc;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e6c56e;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+#success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+#success-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.success-box {
+    background: var(--input-bg);
+    padding: 40px 50px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transform: scale(0.9);
+    animation: pop-in 0.4s ease forwards;
+}
+
+@keyframes pop-in {
+    to {
+        transform: scale(1);
+    }
+}
+
+.checkmark {
+    font-size: 4em;
+    color: var(--accent-color);
+}
+
+.success-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin: 15px 0 10px;
+}
+
+.success-box p {
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+.back-home-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 25px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .book-showcase img {
+        max-width: 200px;
+    }
+    .payment-form {
+        width: 100%;
+    }
+    .payment-form h1 {
+        text-align: center;
+    }
+}

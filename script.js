@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (booksGridModal) {
                             booksGridModal.innerHTML = '';
                             if (author.books && author.books.length > 0) {
-                                author.books.forEach(book => {
+                                author.books.forEach((book, index) => {
                                     const bookCardFlip = document.createElement('div');
                                     bookCardFlip.classList.add('book-card-flip');
                                     const coverSrc = (book.coverImage && book.coverImage.trim() !== "") ? book.coverImage : 'pictures/placeholder_cover.png';
@@ -90,11 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 <h4>${book.title}</h4>
                                                 ${book.year ? `<span class="book-year">(${book.year})</span>` : ''}
                                                 <p>${book.description || "No description available."}</p>
+                                                
+                                                <a href="checkout.html?authorId=${author.id}&bookIndex=${index}" class="comprar-btn">Comprar</a>
+
                                             </div>
                                         </div>
                                     `;
                                     booksGridModal.appendChild(bookCardFlip);
                                     bookCardFlip.addEventListener('click', (e) => {
+                                        if (e.target.classList.contains('comprar-btn')) {
+                                            return;
+                                        }
                                         e.stopPropagation(); 
                                         bookCardFlip.classList.toggle('is-flipped');
                                     });

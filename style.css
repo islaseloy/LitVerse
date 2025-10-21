@@ -360,3 +360,24 @@ section:last-of-type, #author-gallery { border-bottom: none; }
     .theme-romance #modal-author-name { font-size: 2.4em; }
     .theme-romance .modal-books-section h3 {font-size: 1.8em;}
 }
+
+.comprar-btn {
+    display: inline-block; 
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #D4AF37; 
+    color: #D4AF37;
+    text-decoration: none; 
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.comprar-btn:hover {
+    background-color: #D4AF37; 
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
